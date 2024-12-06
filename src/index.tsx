@@ -1,3 +1,4 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+export * from './components/surveyContext';
+export * from './components/surveyComponent';
+export * from './components/types';
+export * from './components/questionTypeKeys';
