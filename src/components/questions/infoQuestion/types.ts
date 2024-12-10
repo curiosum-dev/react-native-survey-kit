@@ -1,7 +1,6 @@
-import type { InfoQuestionSettings, SurveyQuestion } from '../../types';
+import type { InfoQuestionSettings } from '../../types';
 
 export type InfoQuestionProps = {
-  question: SurveyQuestion;
   settings: InfoQuestionSettings;
   customStyles?: {
     questionText?: object;

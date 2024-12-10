@@ -30,6 +30,7 @@ export const NumericInputQuestion: React.FC<NumericInputQuestionProps> = ({
     <View style={[styles.container, customStyles?.container]}>
       {!sliderOnly ? (
         <TextInput
+          testID="text-input"
           style={[styles.textInput, customStyles?.textInput]}
           textAlign="center"
           keyboardType="numeric"
@@ -49,6 +50,7 @@ export const NumericInputQuestion: React.FC<NumericInputQuestionProps> = ({
         />
       ) : (
         <View
+          testID="container"
           style={[
             styles.nonActiveInputContainer,
             customStyles?.nonActiveInputContainer,

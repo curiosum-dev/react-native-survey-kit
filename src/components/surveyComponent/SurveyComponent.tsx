@@ -96,7 +96,6 @@ export const SurveyComponent: React.FC<SurveyComponentProps> = ({
       case QuestionTypeKeys.Info:
         return (
           <InfoQuestion
-            question={currentQuestion}
             settings={questionSettings as InfoQuestionSettings}
             customStyles={customStyles.infoQuestion}
           />

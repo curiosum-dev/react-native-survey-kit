@@ -47,16 +47,22 @@ export const CustomSlider: React.FC<SliderProps> = ({
 
   return (
     <View
+      testID="slider-container"
       style={[styles.container, style]}
       onLayout={(e) => setSliderWidth(e.nativeEvent.layout.width)}
     >
-      <View style={[styles.track, { width: sliderWidth }, trackStyle]} />
+      <View
+        testID="slider-track"
+        style={[styles.track, { width: sliderWidth }, trackStyle]}
+      />
 
       <View
+        testID="slider-filled-track"
         style={[styles.filledTrack, { width: thumbPosition }, filledTrackStyle]}
       />
 
       <View
+        testID="slider-thumb"
         {...panResponder.panHandlers}
         style={[
           styles.thumb,
