@@ -412,6 +412,8 @@ We welcome contributions! Feel free to fork the repo, make your changes, and sub
 
 ## License
 
+[Curiosum](https://curiosum.com/)
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
