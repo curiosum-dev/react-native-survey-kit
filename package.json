@@ -1,6 +1,6 @@
 {
   "name": "@curiosum-dev/react-native-survey-kit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native package with survey component.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

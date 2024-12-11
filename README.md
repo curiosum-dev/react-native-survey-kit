@@ -404,13 +404,13 @@ To apply these styles, pass them into the `customStyles` prop of the `SurveyComp
     numericInputQuestion: styles.numericInputQuestion,
   }}
 />
+```
 
-
-### Contributing
+## Contributing
 
 We welcome contributions! Feel free to fork the repo, make your changes, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
-### License
+## License
 
 [Curiosum](https://curiosum.com/)
 
@@ -420,7 +420,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Created with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
 
-### Screenshot
+## Screenshot
 
 ![alt text](image.png)
-```
