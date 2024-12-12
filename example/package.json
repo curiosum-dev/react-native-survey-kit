@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "react-native-builder-bob": "^0.33.3"
+    "react-native-builder-bob": "^0.33.3",
+    "typescript": "^5.7.2"
   },
   "private": true
 }

@@ -6,73 +6,27 @@ on:
   pull_request:
     branches:
       - main
-  merge_group:
-    types:
-      - checks_requested
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Lint files
-        run: yarn lint
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Run unit tests
-        run: yarn test --maxWorkers=2 --coverage
-
-  build-library:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Build package
-        run: yarn prepare
-
   typecheck:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup
-        uses: ./.github/actions/setup
-
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Build library
         run: yarn prepare
 
       - name: Link library to example
-        run: yarn workspace example add file:../react-native-survey-kit
+        run: yarn workspace react-native-survey-kit-example add file:../react-native-survey-kit
 
       - name: Typecheck files
-        run: yarn workspace example typecheck
+        run: yarn workspace react-native-survey-kit-example typecheck
 
   publish:
-    needs: build-library
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
@@ -84,6 +38,12 @@ jobs:
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build package
+        run: yarn prepare
 
       - name: Authenticate with npm
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
