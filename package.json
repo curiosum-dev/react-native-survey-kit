@@ -38,7 +38,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "node_modules/.bin/bob build",
     "release": "release-it"
   },
   "keywords": [
