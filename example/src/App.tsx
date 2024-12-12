@@ -5,7 +5,7 @@ import {
   SurveyComponent,
   QuestionTypeKeys,
   type SurveyData,
-} from '@curiosum-dev/react-native-survey-kit';
+} from 'react-native-survey-kit';
 
 const App = () => {
   const [isSurveyVisible, setSurveyVisible] = useState(false);
