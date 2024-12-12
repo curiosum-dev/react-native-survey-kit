@@ -72,9 +72,6 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Install bob
-        run: yarn dlx add bob
-
       - name: Build library
         run: yarn workspace @curiosum-dev/react-native-survey-kit prepare
 
