@@ -58,7 +58,8 @@
   },
   "homepage": "https://github.com/curiosum-dev/react-native-survey-kit#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
