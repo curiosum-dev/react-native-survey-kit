@@ -83,10 +83,13 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
 
-      - name: Authenticate with npm
+      - name: Configure npm for @curiosum-dev scope
         run: |
           echo "@curiosum-dev:registry=https://registry.npmjs.org/" >> ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Publish package
-        run: npm publish
+        run: npm publish --access public
