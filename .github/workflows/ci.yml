@@ -48,7 +48,7 @@ jobs:
         run: yarn install
 
       - name: Build package
-        run: yarn prepare
+        run: npm run build
 
   typecheck:
     runs-on: ubuntu-latest
@@ -61,19 +61,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Cache Yarn Dependencies
+      - name: Cache Dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-npm-
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Build library
-        run: yarn workspace @curiosum-dev/react-native-survey-kit prepare
+        run: npm run build
 
   publish:
     needs: build-library
