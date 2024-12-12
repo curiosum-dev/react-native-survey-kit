@@ -414,7 +414,7 @@ We welcome contributions! Feel free to fork the repo, make your changes, and sub
 
 [Curiosum](https://curiosum.com/)
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/curiosum-dev/react-native-survey-kit/blob/main/LICENSE) file for details.
 
 ---
 
@@ -422,4 +422,4 @@ Created with [create-react-native-library](https://github.com/callstack/react-na
 
 ## Screenshot
 
-![alt text](image.png)
+![alt text](https://raw.githubusercontent.com/curiosum-dev/react-native-survey-kit/main/image.png)

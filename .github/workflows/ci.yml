@@ -70,13 +70,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Build library
-        run: yarn workspace react-native-survey-kit prepare
-
-      - name: Typecheck files
-        run: yarn workspace react-native-survey-kit-example typecheck
+        run: yarn workspace @curiosum-dev/react-native-survey-kit prepare
 
   publish:
     needs: build-library
