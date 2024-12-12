@@ -21,7 +21,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Lint files
-        run: npm run lint
+        run: yarn lint
 
   test:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Run unit tests
-        run: npm test --maxWorkers=2 --coverage
+        run: yarn test --maxWorkers=2 --coverage
 
   build-library:
     runs-on: ubuntu-latest
@@ -45,10 +45,10 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build package
-        run: npm run prepare
+        run: yarn prepare
 
   typecheck:
     runs-on: ubuntu-latest
@@ -61,19 +61,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Cache NPM Dependencies
+      - name: Cache Yarn Dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build library
-        run: npm run prepare
+        run: yarn workspace @curiosum-dev/react-native-survey-kit prepare
 
   publish:
     needs: build-library
