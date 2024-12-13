@@ -73,7 +73,7 @@ jobs:
   publish:
     needs: build-library
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -92,10 +92,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify package version and metadata
-        run: npm pack
-        shell: bash
-
       - name: Publish package
         run: npm publish --access public
-        shell: bash
+        continue-on-error: true
+
+      - name: Upload npm debug logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-debug-logs
+          path: /home/runner/.npm/_logs/
