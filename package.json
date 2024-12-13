@@ -49,7 +49,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/curiosum-dev/react-native-survey-kit.git"
+    "url": "https://github.com/curiosum-dev/react-native-survey-kit.git"
   },
   "author": "Damian333 <burekdamian7@gmail.com> (https://github.com/Damian333)",
   "license": "MIT",
